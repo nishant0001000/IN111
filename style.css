@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ffffff, #4c4c4c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text2 {
+    background: #FDC622;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.card {
+    background-color: transparent;
+    /* Make the box transparent */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: linear-gradient(45deg, black, #facc15, black);
+
+
+    /* Gradient for the stroke */
+    border-radius: 50px;
+    padding: 1px;
+    /* Thickness of the stroke */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    /* Create a mask to show only the border */
+    -webkit-mask-composite: xor;
+
+
+}
+
+.card img {
+    margin: 0 auto;
+}
+
+
+.gradient-hr {
+    border: none;
+    /* Remove default border */
+    height: 2px;
+    /* Set the thickness of the line */
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #facc1580, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    /* Horizontal gradient */
+    margin: 20px 0;
+    /* Add some spacing around the line */
+}
+
+
+
+body {
+    background: 
+        /* First gradient (middle left) */
+        radial-gradient(circle, #facc1580, transparent 50%) -20% 50%,
+        /* Second gradient (bottom right) */
+        radial-gradient(circle, #facc1580, transparent 50%) 90% 100%;
+    background-size: 50% 50%, 50% 50%; /* Control gradient size */
+    background-repeat: no-repeat; /* Prevent repetition of the background */
+    background-color: #000000; /* Fallback color */
+}
+
+@media screen and (max-width: 1357px)
+{
+    body {
+        background: 
+            /* First gradient (middle left) */
+            radial-gradient(circle, #facc1580, transparent 0%) 20% 50%,
+            /* Second gradient (bottom right) */
+            radial-gradient(circle, #facc1580, transparent 0%) 80% 90%;
+        background-size: 40% 40%, 40% 40%; /* Control gradient size */
+        background-repeat: no-repeat; /* Prevent repetition of the background */
+        background-color: #000000; /* Fallback color */
+    }
+}
